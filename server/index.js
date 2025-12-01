@@ -37,9 +37,15 @@ const db = new pg.Client({
 
 runQuery();
 
+
+
  app.get("/",(req,res)=>{
  
-    res.json(data);
+
+    const randomData = Math.floor(Math.random() * data.length);
+
+console.log(randomData);
+    res.json(data[randomData]);
 })
 
 
